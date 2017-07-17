@@ -25,7 +25,7 @@ A handy alerting tool for Elastic Search, I use this to monitoring my data strea
 
 I use Kibana as a real-time visualization engine for data streams.  I follow their development pretty closely.
 
-## My Github Projects ![Alt Text]({filename}/images/GitHub-Mark-64px.png)
+## My Github Projects ![Alt Text]({{ site.url }}/assets/GitHub-Mark-64px.png)
 
 A lot of the open source work I've done is thanks to my company, **IST Research.**  I've been fortunate to be able to use open source code for my job and also open source code back to the community where it makes sense.  For some of these projects I'm the primary contributer, and others are ones that I use frequently have some more minor contributions.
 
