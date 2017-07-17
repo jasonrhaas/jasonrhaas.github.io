@@ -1,10 +1,6 @@
 ---
 layout: post
-title: Trying Out Pelican
-categories: [blogs]
-tags: [blogs, pelican]
-published: True
-
+title: "Trying out Pelican"
 ---
 
 So as I mentioned in my first post, I decided to start my blog using Jekyll because it seemed to be the most widely used while still being fairly lightweight. However, as I began to look at trying to customize the site, I found the structure and templating system a little bit weird and unfamiliar.
@@ -35,11 +31,11 @@ My plan is to control all of My blog posts in a separate repository that only co
 
 {% highlight python %}
 def jek_prep():
-	local("cp *.md ~/repos/jek-blog/_posts")
-	# + other tasks
+    local("cp *.md ~/repos/jek-blog/_posts")
+    # + other tasks
 def pel_prep():
-	local("cp *.md ~/repos/pel-blog/content")
-	# + other tasks
+    local("cp *.md ~/repos/pel-blog/content")
+    # + other tasks
 {% endhighlight %}
 
 For reference, here is my fabric deploy for the jekyll blog.
@@ -50,13 +46,13 @@ from fabric.api import local
 host = 'jasonrhaas.com'
 
 def test():
-	local("jekyll serve --watch")
+    local("jekyll serve --watch")
 
 def prep():
     local("git add -p && git commit")
     local("git push")
 
 def deploy():
-	local("jekyll build")
-	local("scp -r _site jasonrhaas.com:~")
+    local("jekyll build")
+    local("scp -r _site jasonrhaas.com:~")
 {% endhighlight %}

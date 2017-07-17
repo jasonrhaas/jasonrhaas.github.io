@@ -1,6 +1,6 @@
 ---
 layout: post
-title: Ready..Set..Hack!!
+title: "Ready, set hack!"
 ---
 
 OK so I want to dedicate the next few posts (and probably more in the future) to the subject of **hacking things together quickly**.  No, I'm not talking about hacking as in "hacking into someone's computer", I'm talking about getting something **working** very quickly.  In my experience, quickly usually means somewhere between **1 day** and **1 week**.
