@@ -30,6 +30,7 @@ plugins:
   - jekyll-feed
 disqus:
     shortname: python-n-stuff
+google_analytics: UA-67261725-3
 
 # Exclude from processing.
 # The following items will not be processed, by default. Create a custom list
