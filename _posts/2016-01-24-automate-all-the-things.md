@@ -3,8 +3,6 @@ layout: post
 title: "Automate all the things"
 ---
 
-# Infrastructure as code
-
 Building a computing infrastructure for your applications and big data stack is time consuming.  Not only is it time consuming, but it's very hard to plan for.  Your needs today will likely not be your needs a year from now.  This is especially the case if you are a growing technology company staying on the edge of the latest developments in the big data world.  We all try to plan and think ahead for future needs, but this is often less than perfect.
 
 In the past, system administrators and engineers typically built up their servers using a combination of techniques.  Quite often this would involve customizing a particular server or image and then "cloning" it over to other servers.  But this only works if the software on each needs to be the same.  So inevitably there ends up being some kind of custom bash script or post install script to customize the build on a server by server basis.  I've seen some pretty fancy bash and perl scripts used, and while very powerful they become a nightmare to maintain.
