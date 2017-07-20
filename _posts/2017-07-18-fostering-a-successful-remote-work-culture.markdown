@@ -1,5 +1,5 @@
 ---
-title: Fostering a Successful (Remote) Work Culture
+title: 4 Keys to Fostering a Successful (Remote) Work Culture
 layout: post
 draft: true
 ---
@@ -69,14 +69,8 @@ The Makers on the other hand require time for Deep Work to truly be productive. 
 
 In my last job, I often railed back at the constant stream of meetings.  I like to use the analogy of comparing software development to driving a manual transmission car.  My best work is done when I'm in 6th gear.  But to get to 6th gear I have to go through all of the gears:  1st, 2nd, 3rd, 4th, 5th, and then 6th.  When I'm in 6th gear I am "in the zone" or "wired in" if you're a fan of that Facebook movie.  If I get interrupted while I'm in any of the gears and have to switch tasks, I have to restart in 1st gear and work my way up again, similar to having to stop a car at a stop sign.
 
-  
-## 4.  Positive re-enforcement
 
-Praise in public, scold in private.  In general, I believe this, although I think team members should be open about (constructive) criticism and share ideas for improvement with the whole team.
-
-When someone comes through on the Friday night deploy, or does a great job on a particular task, let them know!  And in a public forum.  In fact, there are whole companies that have been created around this idea alone [reference]
-
-## 5.  Innovation and Open Culture
+## 4.  Innovation and Open Culture
 
 The best ideas can come from anywhere.  They can come from the CEO, or from the Jr. Engineer you just hired.  Different people in your company have different perspectives on how things work, and may have an idea to improve or help grow the company.  It's important to encourage an environment of innovation, and one that allows everyone to put their ideas in a public space, without fear.  Even if the idea will never be implemented, its important to hear ideas from all sides.
 
