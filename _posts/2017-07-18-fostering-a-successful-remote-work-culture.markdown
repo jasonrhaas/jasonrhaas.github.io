@@ -1,6 +1,7 @@
 ---
 title: Fostering a Successful (Remote) Work Culture
 layout: post
+draft: true
 ---
 
 Teams working remotely is more common then ever.  The combination of flexibility, high speed Internet, and the right tools make working remotely a viable option for may teams.  It's given rise to a whole generation of people that not only can work remotely, they expect it.  [reference]
@@ -67,7 +68,6 @@ There is a great article I read I while back [reference] that talks about the tw
 The Makers on the other hand require time for Deep Work to truly be productive.  Jumping from one task to the next is counter productive as an engineer.  This is part of the reason why many software developers report doing their best work late at night [reference].  The Managers should keep this in mind and try to batch weekly meetings all on one day, and keep other meetings during the week to a specific chunk of time, such as 9 - 12am, and leave the afternoon for engineering work.
 
 In my last job, I often railed back at the constant stream of meetings.  I like to use the analogy of comparing software development to driving a manual transmission car.  My best work is done when I'm in 6th gear.  But to get to 6th gear I have to go through all of the gears:  1st, 2nd, 3rd, 4th, 5th, and then 6th.  When I'm in 6th gear I am "in the zone" or "wired in" if you're a fan of that Facebook movie.  If I get interrupted while I'm in any of the gears and have to switch tasks, I have to restart in 1st gear and work my way up again, similar to having to stop a car at a stop sign.
-
 
   
 ## 4.  Positive re-enforcement
