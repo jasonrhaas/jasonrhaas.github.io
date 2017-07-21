@@ -6,7 +6,7 @@ draft: true
 
 Teams working remotely is more common then ever.  The combination of flexibility, high speed Internet, and the right tools make working remotely a viable option for may teams.  It's given rise to a whole generation of people that not only can work remotely, they expect it.  [reference]
 
-What do I know about working remotely?  I worked successfully in a remote capacity for almost 3 years.  In that time, I lived in various parts of the United States, and traveled around the world with a program called Remote Year.  I am passionate about fostering a culture that allows teams to not only work remotely, but thrive.
+What do I know about working remotely?  I've worked successfully in a remote capacity for almost 3 years.  In that time, I lived in various parts of the United States, and traveled around the world with a program called Remote Year.  I am passionate about fostering a culture that allows teams to not only work remotely, but thrive.
 
 Here are the 5 traits that are absolutely essential to fostering a healthy remote work culture.
 
@@ -74,7 +74,7 @@ In my last job, I often railed back at the constant stream of meetings.  I like 
 
 The best ideas can come from anywhere.  They can come from the CEO, or from the Jr. Engineer you just hired.  Different people in your company have different perspectives on how things work, and may have an idea to improve or help grow the company.  It's important to encourage an environment of innovation, and one that allows everyone to put their ideas in a public space, without fear.  Even if the idea will never be implemented, its important to hear ideas from all sides.
 
-Some of my best work has come from this kind of innovative culture.  Most companies have some sort of roadmap that is broken up into tasks, with some schedule on how to get there.  The thing is, once engineering start gaining a deeper understanding of how to solve the problem, there may be an alternative approach that drastically improves the product.  This applies particularly in the technology industry which is changing constantly.  
+Some of my best work has come from this kind of innovative culture.  Most companies have some sort of roadmap that is broken up into tasks, with some schedule on how to get there.  The thing is, once engineering starts gaining a deeper understanding of how to solve the problem, there may be an alternative approach that drastically improves the product.  This applies particularly in the technology industry which is changing constantly.  
 
 I remember when I first discovered Kibana for Elastic Search.  At the time the company had a lot of data that was sitting around in raw files, S3, or a SQL database.  In doing some data analysis for the CEO, I stumbled upon the out-of-the-box visualization capabilities of Kibana.  I read up on it, and started indexing the data to Elastic Search, and created some basically visualizations with Kibana.  When I first told my boss about this, he was frustrated that I wasn't working on my assigned tasks and "wasting" my time playing with this new technology.  However, as soon as I demo'ed this to my boss and relevant stakeholder they were blown away with the capabilities.  This side project alone opened up an entire new capability to the company and our customers, and helped to propel the company's technology in to the future.
 
