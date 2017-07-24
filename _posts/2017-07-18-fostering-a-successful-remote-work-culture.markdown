@@ -4,19 +4,19 @@ layout: post
 draft: true
 ---
 
-Teams working remotely is more common then ever.  The combination of flexibility, high speed Internet, and the right tools make working remotely a viable option for may teams.  It's given rise to a whole generation of people that not only can work remotely, they expect it.  [reference]
+Teams working remotely is more common then ever.  The combination of flexibility, high speed Internet, and the right tools make working remotely a viable option for may teams.  It has given rise to a whole generation of people that not only *can* work remotely, they *expect* it.  [reference]
 
-What do I know about working remotely?  I've worked successfully in a remote capacity for almost 3 years.  In that time, I lived in various parts of the United States, and traveled around the world with a program called Remote Year.  I am passionate about fostering a culture that allows teams to not only work remotely, but thrive.
+What do I know about working remotely?  I've worked successfully in a remote capacity for almost 3 years.  In that time, I traveled around the world with a program called Remote Year while working remotely.  I am passionate about fostering a culture that allows remote teams not only work together, but thrive.
 
-Here are the 5 traits that are absolutely essential to fostering a healthy remote work culture.
+Here are the 4 traits that are absolutely essential to fostering a healthy (remote) work culture.
 
 ## 1. Open communication
 
 By far the most important part of a successful remote work culture is open communication.  What do I mean by this?  Think about how a traditional office operates.  There are hallway conversations, conversations at the water cooler, meetings, the cafeteria.  Sometimes the conversation is casual but other times its important work stuff that should be shared with your co-workers.
 
-I can't tell you how many times in the past I've made some big technical decisions by bumping into a senior engineer in the hallway and asking his advice.  Sometimes bouncing ideas off other people helps you solve a problem.  In fast, this is the #1 reason company like to co-locate and put everyone in a single space.  This is good for fostering ideas and innovation, but very bad for solving hard problems that require Deep Work [reference].
+I can't tell you how many times in the past I've made some big technical decisions by bumping into a senior engineer in the hallway and asking his advice.  Sometimes bouncing ideas off other people helps you solve a problem.  In fact, this is the #1 reason companies like to co-locate and put everyone in a single space.  This is good for fostering ideas and innovation, but very bad for solving hard problems that require Deep Work [reference].
 
-Making decisions like this, however, is very bad.  Ideally the whole core engineering staff would also be involved at some level to make sure we don't a horrible mistake.  In a traditional office, this usually means meetings.  However, it's pretty well understand that meetings are a colossal waste of time and resources [reference].
+Making important decisions in a vacuum, however, is very bad.  Ideally the whole core engineering staff would also be involved at some level to validate ideas.  In a traditional office, this usually means meetings.  However, it's pretty well understood that meetings are a colossal waste of time and resources [reference].
 
 The solution in a remote work environment is open communication using asynchronous tools.  For software development, this often includes tools such as:
 
