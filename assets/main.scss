@@ -5,11 +5,12 @@
 // Define defaults for each variable.
 
 // $base-font-family: "Ubuntu Mono", "Helvetica Neue", Helvetica, Arial, sans-serif !default;
-$base-font-family: "Ubuntu";
-$base-font-size:   16px !default;
+// $base-font-family: "Ubuntu Mono";
+$base-font-family: 'goudy old style', 'minion pro', 'bell mt', Georgia, 'Hiragino Mincho Pro', serif;
+$base-font-size:   17px !default;
 $base-font-weight: 400 !default;
 $small-font-size:  $base-font-size * 0.875 !default;
-$base-line-height: 1.6 !default;
+// $base-line-height: 1.2 !default;
 
 $brand-color: #8f09ef;
 
