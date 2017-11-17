@@ -1,13 +1,15 @@
 ---
-title: Technology: The Final Frontier
+title: Technology - The Final Frontier
 layout: post
-draft: true
+excerpt: "Technology (and especially software) is constantly changing. Just because one
+database, framework or programming language is popular now doesn’t mean it will
+be in 5 years, or even 6 months. A career in technology is a career is
+constant learning."
+draft: false
 ---
 
 ![](https://cdn-images-1.medium.com/max/2000/1*OpY-PPIj2tPZ6Bc1DMiiIA.jpeg)
 <span class="figcaption_hack">Photo by SpaceX on Unsplash</span>
-
-### Technology: The Final Frontier
 
 Technology (and especially software) is constantly changing. Just because one
 database, framework or programming language is popular now doesn’t mean it will
