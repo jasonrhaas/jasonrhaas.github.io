@@ -8,6 +8,8 @@ what didn't."
 draft: false
 ---
 
+![White oak kitchen cabinets with a light stone island, black pendant lights, and an espresso station]({{ site.url }}/assets/kitchen-reno.jpg)
+
 My wife and I are doing a kitchen renovation with a general contractor — new
 countertops, new sinks, and a water line plumbed in for the fancy new espresso
 machine. The last piece was the cabinets. Everything is stark white right now and
