@@ -1,4 +1,5 @@
 ---
+tags: [oss]
 layout: post
 title: "Why I love open source"
 ---

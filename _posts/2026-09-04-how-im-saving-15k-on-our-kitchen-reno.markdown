@@ -1,4 +1,5 @@
 ---
+tags: [shop]
 title: How I'm Saving $15K on Our Kitchen Reno
 layout: post
 excerpt: "My wife and I are doing a kitchen renovation, and the cabinet quotes came

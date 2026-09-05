@@ -1,0 +1,8 @@
+{%- assign p = include.post -%}
+{%- assign vt = p.url | slugify -%}
+<li class="row{% if include.latest %} row--latest{% endif %}">
+  <time class="row__date" datetime="{{ p.date | date_to_xmlschema }}">{{ p.date | date: "%Y-%m-%d" }}</time>
+  {%- assign t = p.tags | first -%}
+  {% if t %}<span class="row__tag">{{ t }}</span>{% else %}<span class="row__tag"></span>{% endif %}
+  <a class="row__title" href="{{ p.url | relative_url }}" style="view-transition-name: p-{{ vt }}">{{ p.title | escape }}</a>
+</li>

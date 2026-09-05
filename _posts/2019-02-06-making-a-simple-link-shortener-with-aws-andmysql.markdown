@@ -1,4 +1,5 @@
 ---
+tags: [aws]
 title: Making a simple link shortener with AWS and MySQL
 layout: post
 excerpt: "Link shorteners are handy and pretty simple to implement.

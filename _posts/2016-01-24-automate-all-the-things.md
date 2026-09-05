@@ -1,4 +1,5 @@
 ---
+tags: [ops]
 layout: post
 title: "Automate all the things"
 ---

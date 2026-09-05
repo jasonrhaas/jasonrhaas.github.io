@@ -1,4 +1,5 @@
 ---
+tags: [design]
 layout: post
 title: "My approach to design"
 ---

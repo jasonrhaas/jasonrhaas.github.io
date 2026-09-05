@@ -1,4 +1,5 @@
 ---
+tags: [career]
 title: Technology - The Final Frontier
 layout: post
 excerpt: "Technology (and especially software) is constantly changing. Just because one
