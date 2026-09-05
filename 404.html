@@ -1,24 +1,11 @@
 ---
 layout: default
+permalink: /404.html
 ---
 
-<style type="text/css" media="screen">
-  .container {
-    margin: 10px auto;
-    max-width: 600px;
-    text-align: center;
-  }
-  h1 {
-    margin: 30px 0;
-    font-size: 4em;
-    line-height: 1;
-    letter-spacing: -1px;
-  }
-</style>
-
-<div class="container">
+<div class="notfound">
+  <p class="notfound__cmd">$ cat {{ page.url }}</p>
   <h1>404</h1>
-
-  <p><strong>Page not found :(</strong></p>
-  <p>The requested page could not be found.</p>
+  <p>No such file or directory.</p>
+  <p>The page moved, or it never existed. Try the <a href="{{ "/archive/" | relative_url }}">archive</a> &mdash; every post since 2015 is listed there.</p>
 </div>

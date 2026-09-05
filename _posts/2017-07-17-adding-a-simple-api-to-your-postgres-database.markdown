@@ -1,4 +1,5 @@
 ---
+tags: [python]
 title: Adding a simple API to your Postgres database
 layout: post
 ---

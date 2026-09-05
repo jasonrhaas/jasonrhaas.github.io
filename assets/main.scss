@@ -2,16 +2,504 @@
 # Only the main Sass file needs front matter (the dashes are enough)
 ---
 
-// Define defaults for each variable.
+// ---------------------------------------------------------------------------
+// Signal & Sawdust — terminal brutalist
+//
+// One typeface, hairline rules, two accents. Everything is driven by the custom
+// properties below; there are no per-theme component rules, so a color only
+// ever needs changing in one place.
+// ---------------------------------------------------------------------------
 
-// $base-font-family: "Ubuntu Mono", "Helvetica Neue", Helvetica, Arial, sans-serif !default;
-// $base-font-family: "Ubuntu Mono";
-$base-font-family: 'goudy old style', 'minion pro', 'bell mt', Georgia, 'Hiragino Mincho Pro', serif;
-$base-font-size:   17px !default;
-$base-font-weight: 400 !default;
-$small-font-size:  $base-font-size * 0.875 !default;
-// $base-line-height: 1.2 !default;
+:root {
+  --bg:      #fdfdf8;  // paper
+  --ink:     #121311;  // body text
+  --dim:     #6f7268;  // dates, meta, captions
+  --rule:    #191a17;  // heavy rule under the masthead
+  --hair:    #d5d6cc;  // hairline between rows
+  --fill:    #f2f2ea;  // code blocks, blockquote ground
+  --acc:     #0f7d8c;  // links, current nav — the cyan
+  --acc-2:   #b34a08;  // tags — the burnt orange
+  --mark:    #cdeaee;  // highlight behind the newest post
 
-$brand-color: #8f09ef;
+  --measure: 68ch;
+  --gutter:  clamp(1.15rem, 4vw, 2.5rem);
+  --mono: "JetBrains Mono", ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+}
 
-@import "minima";
+// The un-stamped document is the common case: most readers never set the
+// artifact/page theme explicitly, so `prefers-color-scheme` is what decides.
+// Guarding on :not([data-theme="light"]) lets an explicit light choice still win.
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) {
+    --bg:    #0b0d0c;
+    --ink:   #e6e5dc;
+    --dim:   #8b8f85;
+    --rule:  #e6e5dc;
+    --hair:  #282b27;
+    --fill:  #141716;
+    --acc:   #4fd3e0;
+    --acc-2: #f0913f;
+    --mark:  #17403f;
+  }
+}
+
+:root[data-theme="dark"] {
+  --bg:    #0b0d0c;
+  --ink:   #e6e5dc;
+  --dim:   #8b8f85;
+  --rule:  #e6e5dc;
+  --hair:  #282b27;
+  --fill:  #141716;
+  --acc:   #4fd3e0;
+  --acc-2: #f0913f;
+  --mark:  #17403f;
+}
+
+// ---------------------------------------------------------------------------
+// Reset & base
+// ---------------------------------------------------------------------------
+
+*, *::before, *::after { box-sizing: border-box; }
+
+html { -webkit-text-size-adjust: 100%; }
+
+body {
+  margin: 0;
+  background: var(--bg);
+  color: var(--ink);
+  font-family: var(--mono);
+  font-size: 15px;
+  line-height: 1.65;
+  -webkit-font-smoothing: antialiased;
+  font-variant-ligatures: none;
+}
+
+img, video { max-width: 100%; height: auto; display: block; }
+
+a {
+  color: var(--acc);
+  text-decoration: none;
+  border-bottom: 1px solid currentColor;
+}
+a:hover { background: var(--mark); color: var(--ink); }
+
+:focus-visible { outline: 2px solid var(--acc); outline-offset: 2px; }
+
+::selection { background: var(--mark); color: var(--ink); }
+
+hr { border: 0; border-top: 1px solid var(--hair); margin: 2.2rem 0; }
+
+// Cross-document morph from an index row to the post it opens. Ignored by
+// browsers that don't support it, which just get a normal navigation.
+@view-transition { navigation: auto; }
+
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: .001ms !important;
+    transition-duration: .001ms !important;
+  }
+}
+
+// ---------------------------------------------------------------------------
+// Shell
+// ---------------------------------------------------------------------------
+
+.wrap {
+  max-width: 62rem;
+  margin: 0 auto;
+  padding: 0 var(--gutter);
+}
+
+.skip {
+  position: absolute;
+  left: -9999px;
+  &:focus { position: static; display: inline-block; padding: .5rem 0; }
+}
+
+// ---------------------------------------------------------------------------
+// Masthead
+// ---------------------------------------------------------------------------
+
+.masthead {
+  padding: clamp(1.6rem, 5vw, 2.6rem) 0 0;
+  border-bottom: 2px solid var(--rule);
+}
+
+.masthead__cmd {
+  font-size: 11px;
+  color: var(--dim);
+  margin: 0 0 .9rem;
+  letter-spacing: .02em;
+
+  b { color: var(--acc); font-weight: 500; }
+}
+
+.masthead__title {
+  display: inline-block;
+  margin: 0;
+  font-size: clamp(1.75rem, 6.2vw, 2.6rem);
+  font-weight: 700;
+  letter-spacing: -.045em;
+  line-height: 1;
+  color: var(--ink);
+  border: 0;
+
+  em { font-style: normal; color: var(--acc); }
+}
+a.masthead__title:hover { background: none; color: var(--ink); }
+
+.masthead__sub {
+  margin: .65rem 0 1.1rem;
+  font-size: 12px;
+  color: var(--dim);
+}
+
+// ---------------------------------------------------------------------------
+// Nav
+// ---------------------------------------------------------------------------
+
+.nav {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0 1.5rem;
+  border-top: 1px solid var(--hair);
+  padding: .7rem 0;
+  font-size: 12px;
+
+  a {
+    color: var(--ink);
+    border-bottom: 1px solid transparent;
+  }
+  a:hover { background: none; color: var(--acc); border-bottom-color: var(--acc); }
+  a[aria-current] { color: var(--acc); border-bottom-color: var(--acc); }
+}
+
+// ---------------------------------------------------------------------------
+// Index — the post list reads as `ls -la`
+// ---------------------------------------------------------------------------
+
+.list { margin: 0; padding: 0; list-style: none; }
+
+.row {
+  display: grid;
+  grid-template-columns: 6.5rem 5.5rem minmax(0, 1fr);
+  gap: 0 1rem;
+  align-items: baseline;
+  padding: .72rem 0;
+  border-bottom: 1px solid var(--hair);
+  font-size: 13px;
+}
+
+.row__date {
+  color: var(--dim);
+  font-variant-numeric: tabular-nums;
+  white-space: nowrap;
+}
+
+.row__tag {
+  color: var(--acc-2);
+  font-size: 12px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+a.row__tag { border-bottom: 0; }
+a.row__tag:hover { background: var(--mark); color: var(--ink); }
+
+.row__title {
+  color: var(--ink);
+  font-weight: 500;
+  border-bottom: 0;
+  text-wrap: pretty;
+  // Grid items stretch by default, which would drag the hover and the
+  // --latest underlay across the whole column instead of hugging the text.
+  justify-self: start;
+}
+.row__title:hover { background: var(--mark); }
+
+// The newest post gets an underlay rather than a card, so the row rhythm holds.
+.row--latest .row__title {
+  box-shadow: inset 0 -7px 0 var(--mark);
+}
+
+@media (max-width: 34rem) {
+  .row {
+    grid-template-columns: minmax(0, 1fr) auto;
+    gap: .15rem .75rem;
+  }
+  .row__title { grid-column: 1 / -1; order: -1; font-size: 14px; }
+}
+
+.list__foot {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  gap: .4rem 1.5rem;
+  margin: 1.1rem 0 0;
+  font-size: 11px;
+  color: var(--dim);
+}
+
+// ---------------------------------------------------------------------------
+// Archive — same rows, grouped under year headings
+// ---------------------------------------------------------------------------
+
+.year {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  margin: 2.4rem 0 .3rem;
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: .18em;
+  color: var(--ink);
+
+  &::after {
+    content: "";
+    flex: 1;
+    border-top: 1px solid var(--hair);
+  }
+}
+.year:first-of-type { margin-top: 1.4rem; }
+
+// ---------------------------------------------------------------------------
+// Article
+// ---------------------------------------------------------------------------
+
+.post { padding: 2rem 0 0; }
+
+.post__header {
+  border-bottom: 1px solid var(--hair);
+  padding-bottom: 1.1rem;
+  margin-bottom: 1.8rem;
+}
+
+.post__title {
+  margin: 0;
+  font-size: clamp(1.4rem, 4.4vw, 2rem);
+  font-weight: 700;
+  letter-spacing: -.035em;
+  line-height: 1.12;
+  text-wrap: balance;
+}
+
+.post__meta {
+  margin: .8rem 0 0;
+  font-size: 11.5px;
+  color: var(--dim);
+  display: flex;
+  flex-wrap: wrap;
+  gap: .3rem .75rem;
+
+  time { font-variant-numeric: tabular-nums; }
+  .sep { opacity: .5; }
+  .tag { color: var(--acc-2); border-bottom: 0; }
+  .tag:hover { background: var(--mark); color: var(--ink); }
+}
+
+// ---------------------------------------------------------------------------
+// Prose
+// ---------------------------------------------------------------------------
+
+.prose {
+  max-width: var(--measure);
+
+  // Flow spacing lives on one axis only. Both of these are (0,1,0), so the
+  // second wins on order — but any `.prose p`-style rule would be (0,1,1) and
+  // silently beat them, so element-level margin resets are kept out of here.
+  > * { margin: 0; }
+  > * + * { margin-top: 1.15rem; }
+
+  // Older posts use `#` for their first in-body heading, newer ones `##`.
+  h1, h2, h3, h4 {
+    margin: 2.4rem 0 0;
+    line-height: 1.25;
+    letter-spacing: -.02em;
+    text-wrap: balance;
+    font-weight: 700;
+  }
+  h1, h2 {
+    font-size: 1.18rem;
+    padding-bottom: .4rem;
+    border-bottom: 1px solid var(--hair);
+  }
+  h3 { font-size: 1.02rem; }
+  h4 { font-size: .94rem; color: var(--dim); }
+
+  // First heading in a post shouldn't push off the header rule.
+  > :first-child { margin-top: 0; }
+
+  ul, ol { padding-left: 1.4rem; }
+  li + li { margin-top: .35rem; }
+  li::marker { color: var(--acc-2); }
+
+  blockquote {
+    border-left: 2px solid var(--acc);
+    background: var(--fill);
+    padding: .8rem 1.1rem;
+    color: var(--dim);
+
+    > * + * { margin-top: .8rem; }
+  }
+
+  img {
+    border: 1px solid var(--hair);
+    margin-top: 1.6rem;
+    margin-bottom: 1.6rem;
+  }
+
+  // Kramdown emits this for the caption line under an image.
+  .figcaption_hack {
+    display: block;
+    font-size: 11px;
+    color: var(--dim);
+    margin-top: -1.2rem;
+  }
+
+  table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 13px;
+
+    th, td {
+      text-align: left;
+      padding: .5rem .8rem .5rem 0;
+      border-bottom: 1px solid var(--hair);
+    }
+    th { color: var(--dim); font-weight: 500; }
+  }
+}
+
+// Tables and anything else too wide scrolls in its own box, never the body.
+.prose__scroll { overflow-x: auto; }
+
+// ---------------------------------------------------------------------------
+// Code
+// ---------------------------------------------------------------------------
+
+code {
+  font-family: var(--mono);
+  font-size: .9em;
+  background: var(--fill);
+  padding: .1em .35em;
+  border: 1px solid var(--hair);
+}
+
+pre {
+  background: var(--fill);
+  border: 1px solid var(--hair);
+  border-left: 2px solid var(--acc);
+  padding: .9rem 1rem;
+  overflow-x: auto;
+  font-size: 12.5px;
+  line-height: 1.55;
+
+  code {
+    background: none;
+    border: 0;
+    padding: 0;
+    font-size: inherit;
+  }
+}
+
+// Rouge. Deliberately sparse — comments recede, strings and literals take the
+// orange, keywords take the cyan. Everything else stays body text.
+.highlight {
+  .c, .c1, .cm, .cs, .cd { color: var(--dim); font-style: italic; }
+  .k, .kd, .kn, .kp, .kr, .kt, .kc, .kv { color: var(--acc); font-weight: 500; }
+  .s, .s1, .s2, .sb, .sc, .sd, .se, .sh, .si, .sx, .sr, .ss { color: var(--acc-2); }
+  .m, .mf, .mh, .mi, .mo, .il { color: var(--acc-2); }
+  .nf, .nb, .nc, .nn { color: var(--ink); font-weight: 500; }
+  .nt { color: var(--acc); }
+  .na, .nv, .vi, .vg, .vc { color: var(--ink); }
+  .o, .ow, .p { color: var(--dim); }
+  .gd { color: var(--acc-2); }
+  .gi { color: var(--acc); }
+  .err { color: var(--acc-2); border-bottom: 1px dotted var(--acc-2); }
+}
+
+// jekyll-gist ships its own stylesheet from GitHub; just keep it in its lane.
+.gist { font-size: 12px; }
+.gist .blob-wrapper { overflow-x: auto; }
+
+// ---------------------------------------------------------------------------
+// Post footer & pagination
+// ---------------------------------------------------------------------------
+
+.post__nav {
+  display: grid;
+  gap: 1px;
+  margin-top: 3rem;
+  border-top: 1px solid var(--hair);
+  padding-top: 1.2rem;
+  font-size: 12px;
+
+  a { border-bottom: 0; display: block; }
+  a:hover { background: none; }
+  a:hover .post__nav-title { background: var(--mark); }
+}
+
+@media (min-width: 40rem) {
+  .post__nav { grid-template-columns: 1fr 1fr; gap: 1.5rem; }
+  .post__nav-item--next { text-align: right; }
+}
+
+.post__nav-label {
+  display: block;
+  color: var(--dim);
+  font-size: 10.5px;
+  letter-spacing: .14em;
+  text-transform: uppercase;
+  margin-bottom: .3rem;
+}
+.post__nav-title { color: var(--ink); font-weight: 500; }
+
+// ---------------------------------------------------------------------------
+// Site footer
+// ---------------------------------------------------------------------------
+
+.foot {
+  margin-top: 4rem;
+  border-top: 2px solid var(--rule);
+  padding: 1.1rem 0 3rem;
+  font-size: 11.5px;
+  color: var(--dim);
+
+  a { color: var(--dim); }
+  a:hover { color: var(--acc); background: none; }
+}
+
+.foot__row {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  gap: .5rem 1.5rem;
+}
+
+.foot__links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0 1.1rem;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+// ---------------------------------------------------------------------------
+// 404
+// ---------------------------------------------------------------------------
+
+.notfound {
+  padding: 4rem 0;
+  max-width: var(--measure);
+
+  h1 {
+    font-size: clamp(3rem, 14vw, 6rem);
+    margin: 0;
+    letter-spacing: -.06em;
+    line-height: .9;
+    color: var(--acc-2);
+  }
+  p { margin: 1.2rem 0 0; }
+  .notfound__cmd { font-size: 12px; color: var(--dim); }
+}

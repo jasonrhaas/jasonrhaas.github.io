@@ -13,8 +13,6 @@ source "https://rubygems.org"
 # Do not pin below 3.9 -- earlier releases cannot run on Ruby 3.x.
 gem "jekyll", "~> 3.10"
 
-# This is the default theme for new Jekyll sites. You may change this to anything you like.
-gem "minima", "~> 2.0"
 
 # If you have any plugins, put them here!
 group :jekyll_plugins do

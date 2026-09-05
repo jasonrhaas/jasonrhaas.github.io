@@ -1,25 +1,38 @@
 ---
 layout: default
 ---
-<article class="post" itemscope itemtype="http://schema.org/BlogPosting">
-
-  <header class="post-header">
-    <h1 class="post-title" itemprop="name headline">{{ page.title | escape }}</h1>
-    <p class="post-meta">
-      <time datetime="{{ page.date | date_to_xmlschema }}" itemprop="datePublished">
-        {% assign date_format = site.minima.date_format | default: "%b %-d, %Y" %}
-        {{ page.date | date: date_format }}
-      </time>
-      {% if page.author %}
-        • <span itemprop="author" itemscope itemtype="http://schema.org/Person"><span itemprop="name">{{ page.author }}</span></span>
-      {% endif %}</p>
+<article class="post" itemscope itemtype="https://schema.org/BlogPosting">
+  <header class="post__header">
+    <h1 class="post__title" itemprop="headline" style="view-transition-name: p-{{ page.url | slugify }}">{{ page.title | escape }}</h1>
+    <p class="post__meta">
+      <time datetime="{{ page.date | date_to_xmlschema }}" itemprop="datePublished">{{ page.date | date: "%Y-%m-%d" }}</time>
+      {%- for tag in page.tags %}<span class="sep">/</span><span class="tag">{{ tag }}</span>{% endfor -%}
+      <span class="sep">/</span><span>{{ content | number_of_words | divided_by: 200 | plus: 1 }} min read</span>
+    </p>
   </header>
 
-  <div class="post-content" itemprop="articleBody">
+  <div class="prose" itemprop="articleBody">
     {{ content }}
   </div>
 
-  {% if site.disqus.shortname %}
-    {% include disqus_comments.html %}
-  {% endif %}
+  {%- if page.previous or page.next %}
+  <nav class="post__nav" aria-label="More posts">
+    {%- if page.previous %}
+    <div class="post__nav-item">
+      <a href="{{ page.previous.url | relative_url }}">
+        <span class="post__nav-label">&larr; Older</span>
+        <span class="post__nav-title">{{ page.previous.title | escape }}</span>
+      </a>
+    </div>
+    {%- endif %}
+    {%- if page.next %}
+    <div class="post__nav-item post__nav-item--next">
+      <a href="{{ page.next.url | relative_url }}">
+        <span class="post__nav-label">Newer &rarr;</span>
+        <span class="post__nav-title">{{ page.next.title | escape }}</span>
+      </a>
+    </div>
+    {%- endif %}
+  </nav>
+  {%- endif %}
 </article>

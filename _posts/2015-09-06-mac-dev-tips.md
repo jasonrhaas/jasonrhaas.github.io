@@ -1,4 +1,5 @@
 ---
+tags: [tools]
 layout: post
 title: "Mac dev tips"
 ---

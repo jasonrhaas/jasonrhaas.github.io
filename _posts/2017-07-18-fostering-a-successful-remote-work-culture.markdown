@@ -1,4 +1,5 @@
 ---
+tags: [remote]
 title: 4 Keys to Fostering a Successful (Remote) Work Culture
 layout: post
 draft: false

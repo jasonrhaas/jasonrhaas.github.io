@@ -1,46 +1,17 @@
-<footer class="site-footer">
-
-  <div class="wrapper">
-
-    <h2 class="footer-heading">{{ site.title | escape }}</h2>
-
-    <div class="footer-col-wrapper">
-      <div class="footer-col footer-col-1">
-        <ul class="contact-list">
-          <li>
-            {% if site.author %}
-              {{ site.author | escape }}
-            {% else %}
-              {{ site.title | escape }}
-            {% endif %}
-            </li>
-            {% if site.email %}
-            <li><a href="mailto:{{ site.email }}">{{ site.email }}</a></li>
-            {% endif %}
-        </ul>
-      </div>
-
-      <div class="footer-col footer-col-2">
-        <ul class="social-media-list">
-          {% if site.github_username %}
-          <li>
-            {% include icon-github.html username=site.github_username %}
-          </li>
-          {% endif %}
-
-          {% if site.twitter_username %}
-          <li>
-            {% include icon-twitter.html username=site.twitter_username %}
-          </li>
-          {% endif %}
-        </ul>
-      </div>
-
-      <div class="footer-col footer-col-3">
-        <p>{{ site.description | escape }}</p>
-      </div>
+<footer class="foot">
+  <div class="wrap">
+    <div class="foot__row">
+      <span>{{ site.title | escape }} — {{ site.author | escape }}</span>
+      <ul class="foot__links">
+        <li><a href="https://github.com/{{ site.github_username }}">github</a></li>
+        <li><a href="https://linkedin.com/in/{{ site.linkedin_username }}">linkedin</a></li>
+        <li><a href="mailto:{{ site.email }}">email</a></li>
+        <li><a href="{{ "/feed.xml" | relative_url }}">rss</a></li>
+      </ul>
     </div>
-
+    <div class="foot__row" style="margin-top:.4rem">
+      <span>built with jekyll · no trackers, no comments, no cookies</span>
+      <span>&copy; {{ site.time | date: "%Y" }}</span>
+    </div>
   </div>
-
 </footer>

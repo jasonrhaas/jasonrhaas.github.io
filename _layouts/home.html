@@ -1,29 +1,15 @@
 ---
 layout: default
 ---
+{{ content }}
 
-<div class="home">
+<ul class="list">
+  {%- for post in site.posts -%}
+    {% include post-row.html post=post latest=forloop.first %}
+  {%- endfor -%}
+</ul>
 
-  {{ content }}
-
-  <h1 class="page-heading">Posts</h1>
-  
-  <ul class="post-list">
-    {% for post in site.posts %}
-      {% if post.draft == false %}
-        <li>
-          {% assign date_format = site.minima.date_format | default: "%b %-d, %Y" %}
-          <span class="post-meta">{{ post.date | date: date_format }}</span>
-
-          <h2>
-            <a class="post-link" href="{{ post.url | relative_url }}">{{ post.title | escape }}</a>
-          </h2>
-          {{ post.excerpt }}
-        </li>
-      {% endif %}
-    {% endfor %}
-  </ul>
-
-  <p class="rss-subscribe">subscribe <a href="{{ "/feed.xml" | relative_url }}">via RSS</a></p>
-
-</div>
+<p class="list__foot">
+  <span>{{ site.posts | size }} posts · {{ site.posts.last.date | date: "%Y" }} → {{ site.posts.first.date | date: "%Y" }}</span>
+  <span><a href="{{ "/archive/" | relative_url }}">full archive</a> · <a href="{{ "/feed.xml" | relative_url }}">rss</a></span>
+</p>

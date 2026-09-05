@@ -1,4 +1,5 @@
 ---
+tags: [career]
 layout: post
 title: "Ready, set hack!"
 ---

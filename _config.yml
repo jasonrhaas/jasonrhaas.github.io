@@ -1,46 +1,36 @@
-# Welcome to Jekyll!
-#
-# This config file is meant for settings that affect your whole blog, values
-# which you are expected to set up once and rarely edit after that. If you find
-# yourself editing this file very often, consider using Jekyll's data files
-# feature for the data you need to update frequently.
-#
-# For technical reasons, this file is *NOT* reloaded automatically when you use
-# 'bundle exec jekyll serve'. If you change this file, please restart the server process.
-
 # Site settings
-# These are used to personalize your new site. If you look in the HTML files,
-# you will see them accessed via {{ site.title }}, {{ site.email }}, and so on.
-# You can create any custom variable you would like, and they will be accessible
-# in the templates via {{ site.myvariable }}.
-title: Python n' stuff
+title: Signal & Sawdust
 email: jasonrhaas@gmail.com
-description: > # this means to ignore newlines until "baseurl:"
-  Python, and other related technical stuff.  Also may include posts about things 
-  I like such as brewing beer and riding motorcycles.
+description: >
+  Jason Haas on software, signals, and things cut to length. Python, AWS, data
+  plumbing, remote work, and the occasional woodworking project.
+tagline: Software, signals, and things cut to length.
+author: Jason Haas
 baseurl: "" # the subpath of your site, e.g. /blog
 url: "https://jasonrhaas.github.io"
 twitter_username: jasonrhaas
 github_username:  jasonrhaas
+linkedin_username: jasonrhaas
+
+# Nav order. Without this Jekyll lists pages alphabetically.
+header_pages:
+  - archive.md
+  - about.md
 
 # Build settings
 markdown: kramdown
-theme: minima
 plugins:
   - jekyll-feed
   - jekyll-gist
-disqus:
-    shortname: python-n-stuff
-google_analytics: UA-67261725-3
+
+sass:
+  style: compressed
 
 # Exclude from processing.
-# The following items will not be processed, by default. Create a custom list
-# to override the default setting.
-# exclude:
-#   - Gemfile
-#   - Gemfile.lock
-#   - node_modules
-#   - vendor/bundle/
-#   - vendor/cache/
-#   - vendor/gems/
-#   - vendor/ruby/
+exclude:
+  - Gemfile
+  - Gemfile.lock
+  - README.md
+  - LICENSE
+  - JasonHaas_Resume.md
+  - vendor/
