@@ -41,4 +41,4 @@ jobs:
           bundle exec htmlproofer ./_site \
             --disable-external \
             --no-enforce-https \
-            --swap-urls "https\://jasonrhaas.github.io:"
+            --swap-urls "https\://signalandsawdust.com:"
