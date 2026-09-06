@@ -30,7 +30,7 @@ jobs:
         run: |
           bundle exec htmlproofer ./_site \
             --no-enforce-https \
-            --swap-urls "https\://jasonrhaas.github.io:" \
+            --swap-urls "https\://signalandsawdust.com:" \
             --ignore-status-codes "403,429" \
             --ignore-urls "/^https?:\/\/(www\.)?(twitter|x)\.com/,/^https?:\/\/(www\.)?linkedin\.com/" \
             --typhoeus '{"timeout":30,"connecttimeout":15,"followlocation":true}' \
