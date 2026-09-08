@@ -10,23 +10,15 @@ draft: false
 
 ![Pixel art: a hand flinging a VS Code window into a metal trash can beside a desk in a dim, blue-lit room]({{ site.url }}/assets/ide-to-trash.jpg)
 
-It's time to call it: the IDE is dead, at least for how I work now.
+I've spent most of my career reaching for the lightest editor in the room —
+notepad, vim, where the thing in front of you is the text and nothing else.
+Sublime Text is old at this point, but it's C++ under the hood and fast in a way
+that still impresses me. And at the start of this year I was sitting in GoLand: a
+JVM IDE with every battery included, the single heaviest tool I could have
+picked.
 
-I've always been drawn to lightweight tools. There's a simple elegance to a
-plain editor — notepad, vim — where the thing in front of you is the text and
-nothing else. Sublime Text is old at this point, but it's C++ under the hood and
-fast in a way that still impresses me. JetBrains tools never really appealed to
-me for that reason: powerful, batteries included, and slow and cumbersome to sit
-in all day. VS Code found the middle ground — quick enough, a mostly
-open-source core, good plugins, and it kept pace on AI.
-
-Still, at the start of this year I was in GoLand, because its Go support is
-genuinely excellent — deep built-ins, click-through navigation on anything.
-Batteries included won out. It had Copilot bolted on, but the AI features always
-trailed the frontier by a release or two.
-
-So why am I not using the IDE much anymore? The simple answer: AI agentic
-software.
+I've barely opened it since spring. Not because I finally came around to my own
+taste — because the agents got good enough that the question stopped mattering.
 
 ## AI: The autocomplete era (2023 – 2025)
 
@@ -38,14 +30,23 @@ it helped. I turned it off a lot.
 Then I saw what Cursor was doing — generating code through chat, letting you
 review the diff, iterating from there — and thought, *this is how it's going to
 be.* Chat existed elsewhere by then, but nobody had built the loop as well. Once
-you get used to working that way, going back feels unbearably slow. VS Code
-followed shortly behind. JetBrains was in last place: a heavyweight JVM IDE that
-crashed constantly and was consistently behind on the AI stuff. That's where my
-frustration started.
+you get used to working that way, going back feels unbearably slow.
+
+VS Code followed shortly behind, and on paper it was the obvious place for me to
+land: quick enough, a mostly open-source core, good plugins, and it kept pace on
+AI. JetBrains was in last place — powerful, batteries included, and slow and
+cumbersome to sit in all day, a heavyweight JVM IDE that crashed constantly and
+was consistently behind on the AI stuff. That's where my frustration started.
 
 Eventually VS Code caught up, with Copilot built right into it. As of this
 writing I'd guess most engineers I know are working that way. It became my
 default for a while too.
+
+And yet the year opened with me back in GoLand, because its Go support is
+genuinely excellent — deep built-ins, click-through navigation on anything.
+Batteries included won out. It had Copilot bolted on, but the AI features always
+trailed the frontier by a release or two. That was the trade I was still willing
+to make in January.
 
 ## AI: The small-chunks era (January – March 2026)
 
