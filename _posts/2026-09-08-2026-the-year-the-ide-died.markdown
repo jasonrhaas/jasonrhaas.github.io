@@ -8,6 +8,8 @@ place on my screen. Here's how the workflow changed, and what I still miss."
 draft: false
 ---
 
+![An IDE window arcing into an open trash can, its lid set aside, with a terminal prompt blinking below]({{ site.url }}/assets/ide-to-trash.svg)
+
 It's time to call it: the IDE is dead, at least for how I work now.
 
 I've always been drawn to lightweight tools. There's a simple elegance to a
