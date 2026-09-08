@@ -8,7 +8,7 @@ place on my screen. Here's how the workflow changed, and what I still miss."
 draft: false
 ---
 
-![An IDE window arcing into an open trash can, its lid set aside, with a terminal prompt blinking below]({{ site.url }}/assets/ide-to-trash.svg)
+![Pixel art: a hand flinging a VS Code window into a metal trash can beside a desk in a dim, blue-lit room]({{ site.url }}/assets/ide-to-trash.jpg)
 
 It's time to call it: the IDE is dead, at least for how I work now.
 
