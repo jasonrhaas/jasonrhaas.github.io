@@ -1,0 +1,20 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" role="img" aria-label="Signal &amp; Sawdust">
+  <title>Signal &amp; Sawdust</title>
+  <!-- A sawtooth wave, which is also a set of saw teeth, dropping sawdust.
+       Colors track the site palette in assets/main.scss. -->
+  <style>
+    svg { --bg: #fdfdf8; --acc: #0f7d8c; --acc-2: #b34a08; }
+    @media (prefers-color-scheme: dark) {
+      svg { --bg: #0b0d0c; --acc: #4fd3e0; --acc-2: #f0913f; }
+    }
+  </style>
+  <rect width="32" height="32" fill="var(--bg, #fdfdf8)"/>
+  <path fill="var(--acc, #0f7d8c)"
+        d="M3 21 L11 8 L11 21 L19 8 L19 21 L27 8 L27 21 Z
+           M3 21 H27 V23 H3 Z"/>
+  <g fill="var(--acc-2, #b34a08)">
+    <rect x="6"    y="26"   width="3.5" height="3.5"/>
+    <rect x="14.5" y="27.5" width="2.5" height="2.5"/>
+    <rect x="21"   y="25.5" width="3"   height="3"/>
+  </g>
+</svg>
