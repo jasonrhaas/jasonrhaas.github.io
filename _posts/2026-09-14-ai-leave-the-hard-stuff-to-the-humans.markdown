@@ -1,6 +1,6 @@
 ---
 tags: [tools]
-title: "AI. Leave the Hard Stuff to the Humans."
+title: "Leave the Hard Stuff to the Humans"
 layout: post
 excerpt: "I let five AI sessions run in parallel with almost no upfront
 planning, just to see how far they'd get. They got further than I expected —
