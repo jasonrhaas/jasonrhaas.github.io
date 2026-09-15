@@ -14,8 +14,7 @@ cyberpunk city, one screen reading "I'm blocked: how should I proceed?" and
 another noting hard problems require human
 judgment]({{ site.url }}/assets/ai-blocked.jpg)
 
-The pitch for AI coding tools has always been the same: automate the boring
-parts, free you up for the interesting problems. I agree with that pitch. I
+The pitch for AI coding tools is simple: automate the "mundane" things,so it frees you up for for more interesting problems. I agree with that pitch. I
 just didn't expect it to mean I'd spend my whole day doing nothing *but* the
 interesting problems, back to back, with no boring ones left in between to
 catch my breath.
