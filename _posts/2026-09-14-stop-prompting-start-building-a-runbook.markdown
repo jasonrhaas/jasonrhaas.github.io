@@ -7,6 +7,11 @@ excerpt: "What it actually takes to get useful work out of coding agents in a
 draft: false
 ---
 
+![A painted illustration of a workshop desk with an open runbook and a
+conveyor-belt pipeline of labeled stations — ticket, plan, code, test, lint,
+quality gate, review, pull request — beside a rack of agent
+worktrees]({{ site.url }}/assets/runbook-not-prompting.jpg)
+
 The interesting work was never the prompting. It's building the scaffolding
 that makes an agent's output *verifiable* and its mistakes *cheap*. Everything
 else below is downstream of that one idea.
