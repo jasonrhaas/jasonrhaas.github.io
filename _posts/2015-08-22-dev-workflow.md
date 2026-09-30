@@ -1,4 +1,7 @@
 ---
+# Not /dev-workflow: the jasonrhaas/dev-workflow repo has GitHub Pages on and
+# claims that path on this domain.
+permalink: /development-workflow
 redirect_from: /2015/08/22/dev-workflow.html
 tags: [tools]
 layout: post
