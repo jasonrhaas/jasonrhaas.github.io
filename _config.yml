@@ -9,9 +9,10 @@ author: Jason Haas
 baseurl: "" # the subpath of your site, e.g. /blog
 url: "https://signalandsawdust.com"
 
-# Clean post URLs, e.g. /i-never-leave-the-terminal/. Old dated .html URLs
-# are kept alive via redirect_from in each post.
-permalink: /:title/
+# Clean post URLs, e.g. /i-never-leave-the-terminal. Jekyll writes
+# i-never-leave-the-terminal.html and GitHub Pages serves it without the
+# extension. Old dated .html URLs are kept alive via redirect_from in each post.
+permalink: /:title
 twitter_username: jasonrhaas
 github_username:  jasonrhaas
 linkedin_username: jasonrhaas
