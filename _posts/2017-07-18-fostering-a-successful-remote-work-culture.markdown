@@ -1,4 +1,5 @@
 ---
+redirect_from: /2017/07/18/fostering-a-successful-remote-work-culture.html
 tags: [remote]
 title: 4 Keys to Fostering a Successful (Remote) Work Culture
 layout: post

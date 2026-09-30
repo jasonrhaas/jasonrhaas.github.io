@@ -1,4 +1,5 @@
 ---
+redirect_from: /2015/11/30/why-i-love-open-source.html
 tags: [oss]
 layout: post
 title: "Why I love open source"

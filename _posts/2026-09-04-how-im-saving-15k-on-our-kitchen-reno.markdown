@@ -1,4 +1,5 @@
 ---
+redirect_from: /2026/09/04/how-im-saving-15k-on-our-kitchen-reno.html
 tags: [shop]
 title: How I'm Saving $15K on Our Kitchen Reno
 layout: post

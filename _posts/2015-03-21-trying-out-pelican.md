@@ -1,4 +1,5 @@
 ---
+redirect_from: /2015/03/21/trying-out-pelican.html
 tags: [meta]
 layout: post
 title: "Trying out Pelican"

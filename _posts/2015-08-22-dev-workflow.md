@@ -1,4 +1,5 @@
 ---
+redirect_from: /2015/08/22/dev-workflow.html
 tags: [tools]
 layout: post
 title: "Development Workflow"

@@ -1,4 +1,5 @@
 ---
+redirect_from: /2026/09/29/i-never-leave-the-terminal.html
 tags: [tools]
 title: "I Never Leave the Terminal"
 layout: post

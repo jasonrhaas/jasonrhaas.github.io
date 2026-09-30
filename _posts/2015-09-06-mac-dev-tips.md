@@ -1,4 +1,5 @@
 ---
+redirect_from: /2015/09/06/mac-dev-tips.html
 tags: [tools]
 layout: post
 title: "Mac dev tips"

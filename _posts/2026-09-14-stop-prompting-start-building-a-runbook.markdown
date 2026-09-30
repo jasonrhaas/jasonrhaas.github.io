@@ -1,4 +1,5 @@
 ---
+redirect_from: /2026/09/14/stop-prompting-start-building-a-runbook.html
 tags: [tools]
 title: "Stop Prompting. Start Building a Runbook."
 layout: post

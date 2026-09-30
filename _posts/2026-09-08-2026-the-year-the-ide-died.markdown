@@ -1,4 +1,5 @@
 ---
+redirect_from: /2026/09/08/2026-the-year-the-ide-died.html
 tags: [tools]
 title: "2026: The Year the IDE Died"
 layout: post

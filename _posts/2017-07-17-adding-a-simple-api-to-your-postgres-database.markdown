@@ -1,4 +1,5 @@
 ---
+redirect_from: /2017/07/17/adding-a-simple-api-to-your-postgres-database.html
 tags: [python]
 title: Adding a simple API to your Postgres database
 layout: post

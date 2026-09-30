@@ -1,4 +1,5 @@
 ---
+redirect_from: /2016/01/24/automate-all-the-things.html
 tags: [ops]
 layout: post
 title: "Automate all the things"

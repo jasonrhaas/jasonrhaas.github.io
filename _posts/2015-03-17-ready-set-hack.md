@@ -1,4 +1,5 @@
 ---
+redirect_from: /2015/03/17/ready-set-hack.html
 tags: [career]
 layout: post
 title: "Ready, set hack!"

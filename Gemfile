@@ -19,6 +19,7 @@ group :jekyll_plugins do
    gem "jekyll-feed", "~> 0.6"
    # Add github gist support
    gem "jekyll-gist"
+   gem "jekyll-redirect-from"
 end
 
 # kramdown 2.x moved the GitHub-flavored markdown parser into its own gem.

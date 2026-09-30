@@ -1,4 +1,5 @@
 ---
+redirect_from: /2026/09/14/ai-leave-the-hard-stuff-to-the-humans.html
 tags: [tools]
 title: "Leave the Hard Stuff to the Humans"
 layout: post

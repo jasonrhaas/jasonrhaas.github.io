@@ -1,4 +1,5 @@
 ---
+redirect_from: /2019/02/06/making-a-simple-link-shortener-with-aws-andmysql.html
 tags: [aws]
 title: Making a simple link shortener with AWS and MySQL
 layout: post

@@ -1,4 +1,5 @@
 ---
+redirect_from: /2015/11/29/my-approach-to-design.html
 tags: [design]
 layout: post
 title: "My approach to design"

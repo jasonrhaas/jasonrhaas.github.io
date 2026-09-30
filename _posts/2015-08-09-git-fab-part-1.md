@@ -1,4 +1,5 @@
 ---
+redirect_from: /2015/08/09/git-fab-part-1.html
 tags: [tools]
 layout: post
 title: "Git fab part 1"

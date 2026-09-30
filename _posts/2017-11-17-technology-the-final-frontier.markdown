@@ -1,4 +1,5 @@
 ---
+redirect_from: /2017/11/17/technology-the-final-frontier.html
 tags: [career]
 title: Technology - The Final Frontier
 layout: post
