@@ -25,7 +25,8 @@ I'd used hand planes before — basic block planes from Lowe's or Home Depot.
 They mostly got the job done. The Lie-Nielsen does it with style and class.
 It's the epitome of "they don't make 'em like they used to," except they do,
 in Maine: cast iron, bronze, and an A2 hardened steel blade. The components
-make all the difference, and you feel it the moment you use it.
+make all the difference, and you feel it the moment you use it — more on
+that in a bit.
 
 ## How I got here
 
