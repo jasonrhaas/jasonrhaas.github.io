@@ -8,6 +8,10 @@ Jira, GitHub, cloud consoles, logs, all of it."
 draft: false
 ---
 
+![An OpenCode session in the terminal: the agent explains a logging fix, then
+reverts it and reports the branch is clean after being told to kill
+it]({{ site.url }}/assets/never-leave-the-terminal.png)
+
 There's something ironic about using the latest frontier AI models inside an
 interface that's been around about as long as computers have. There's also
 something satisfying about it.
