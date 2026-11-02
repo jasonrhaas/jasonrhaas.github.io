@@ -14,18 +14,18 @@ concurrency:
 
 jobs:
   build:
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-24.04
     env:
       # html-proofer parses with nokogiri, which needs a UTF-8 locale to read
       # posts containing em-dashes and smart quotes.
       LANG: C.UTF-8
     steps:
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@v6
 
       - uses: ruby/setup-ruby@v1
         with:
           # Read from .ruby-version so CI and local stay in step.
-          ruby-version-file: .ruby-version
+          ruby-version: .ruby-version
           bundler-cache: true
 
       # --strict_front_matter turns an unparseable YAML header into a build
