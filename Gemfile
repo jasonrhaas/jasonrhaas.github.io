@@ -9,7 +9,7 @@ source "https://rubygems.org"
 # This will help ensure the proper Jekyll version is running.
 # Happy Jekylling!
 #
-# Tracks the Jekyll 3.x line that GitHub Pages builds this site with.
+# Keep local and GitHub Actions builds on the same Jekyll 3.x line.
 # Do not pin below 3.9 -- earlier releases cannot run on Ruby 3.x.
 gem "jekyll", "~> 3.10"
 

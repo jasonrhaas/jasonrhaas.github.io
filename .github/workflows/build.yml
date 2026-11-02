@@ -7,6 +7,9 @@ on:
   # Lets the build be re-run by hand from the Actions tab.
   workflow_dispatch:
 
+permissions:
+  contents: read
+
 # Lets a newer push cancel an in-flight run for the same branch.
 concurrency:
   group: build-${{ github.ref }}
@@ -19,6 +22,7 @@ jobs:
       # html-proofer parses with nokogiri, which needs a UTF-8 locale to read
       # posts containing em-dashes and smart quotes.
       LANG: C.UTF-8
+      JEKYLL_ENV: production
     steps:
       - uses: actions/checkout@v6
 
@@ -43,3 +47,35 @@ jobs:
             --disable-external \
             --no-enforce-https \
             --swap-urls 'https\://signalandsawdust\.com(?!/sigmund-history(/|$)):'
+
+      # Package directly because upload-pages-artifact@v4 embeds a Node 20 action.
+      - name: Package Pages site
+        if: github.ref == 'refs/heads/master' && github.event_name != 'pull_request'
+        run: tar --dereference --hard-dereference --directory _site --exclude=.git --exclude=.github -cf "$RUNNER_TEMP/artifact.tar" .
+
+      - name: Upload Pages site
+        if: github.ref == 'refs/heads/master' && github.event_name != 'pull_request'
+        uses: actions/upload-artifact@v6
+        with:
+          name: github-pages
+          path: ${{ runner.temp }}/artifact.tar
+          retention-days: 1
+          if-no-files-found: error
+
+  deploy:
+    if: github.ref == 'refs/heads/master' && github.event_name != 'pull_request'
+    needs: build
+    runs-on: ubuntu-24.04
+    permissions:
+      pages: write
+      id-token: write
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    concurrency:
+      group: pages
+      cancel-in-progress: false
+    steps:
+      - name: Deploy to GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v5
