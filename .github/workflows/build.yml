@@ -36,9 +36,10 @@ jobs:
       # Internal links and images only. External links are checked on a
       # schedule instead (see links.yml) so a dead third-party URL can never
       # block a PR.
+      # The separately hosted sigmund-history project is checked as an external URL.
       - name: Check internal links and images
         run: |
           bundle exec htmlproofer ./_site \
             --disable-external \
             --no-enforce-https \
-            --swap-urls "https\://signalandsawdust.com:"
+            --swap-urls 'https\://signalandsawdust\.com(?!/sigmund-history(/|$)):'

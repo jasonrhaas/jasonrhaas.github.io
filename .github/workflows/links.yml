@@ -26,11 +26,12 @@ jobs:
       # 403 and 429 are near-always the remote site refusing a CI runner
       # rather than a dead page, so they are not treated as failures.
       # Twitter/X and LinkedIn block unauthenticated fetches outright.
+      # Keep the separately hosted sigmund-history project external to this build.
       - name: Check all links
         run: |
           bundle exec htmlproofer ./_site \
             --no-enforce-https \
-            --swap-urls "https\://signalandsawdust.com:" \
+            --swap-urls 'https\://signalandsawdust\.com(?!/sigmund-history(/|$)):' \
             --ignore-status-codes "403,429" \
             --ignore-urls "/^https?:\/\/(www\.)?(twitter|x)\.com/,/^https?:\/\/(www\.)?linkedin\.com/" \
             --typhoeus '{"timeout":30,"connecttimeout":15,"followlocation":true}' \

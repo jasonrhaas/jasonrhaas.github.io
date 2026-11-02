@@ -110,5 +110,5 @@ gave Opus the facts, family photos, and documents, and asked for a story, not
 a memory book. Even that took a lot of back and forth to get the format the
 way I wanted.
 
-It was worth it. Most of what's in [the report](/sigmund-history/), nobody in
+It was worth it. Most of what's in [the report](https://signalandsawdust.com/sigmund-history/), nobody in
 my family knew a month ago.
