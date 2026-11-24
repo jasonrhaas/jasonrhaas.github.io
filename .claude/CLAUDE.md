@@ -9,7 +9,7 @@ Posts live in `_posts/` and are published at https://signalandsawdust.com.
 - First person, talk to the reader. Lead with the point, then explain.
 - Mix short punchy sentences with longer ones.
 - Bold the one phrase per section worth remembering. Sparingly.
-- Be honest about tradeoffs and caveats. Dry humor is fine, forced jokes aren't.
+- Be honest about tradeoffs and caveats. Dry humor is fine. Don't force jokes.
 
 ## Don't
 
