@@ -88,17 +88,25 @@ Here's a simplified version with made-up names. The real one has a few more
 knobs, but this is the idea:
 
 ```go
-// Before: 15 copies of this, ~60 lines each with error handling
-func ArchiveWidget(w, r) {
-	req := decode(r)
-	tagLogs(req.ID)
-	checkCaller(r)
-	result := svc.Archive(req)
-	encode(w, result)
+// Before: 15 handlers like this (the real ones also did logging and auth)
+func CancelBuild(w http.ResponseWriter, r *http.Request) {
+	var req CancelRequest
+	if err := json.NewDecoder(r.Body).Decode(&req); err != nil {
+		http.Error(w, err.Error(), http.StatusBadRequest)
+		return
+	}
+
+	result, err := builds.Cancel(r.Context(), req)
+	if err != nil {
+		http.Error(w, err.Error(), http.StatusInternalServerError)
+		return
+	}
+
+	json.NewEncoder(w).Encode(result)
 }
 
-// After: the helper does all of that, one line per endpoint
-var ArchiveWidget = callerPost(svc.Archive)
+// After: one shared helper, one line per endpoint
+var CancelBuild = handlePost(builds.Cancel)
 ```
 
 All fifteen handlers fit in one 175-line file now. The helper itself is 75
