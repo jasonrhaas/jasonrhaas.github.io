@@ -84,15 +84,24 @@ This time I went for the whole thing, and I fixed the rules in the same PR.
 
 **One generic POST helper.** The decode → tag → check caller → call service →
 encode flow now lives in one place. Each endpoint is a ~5-line constructor.
-Something like this (names changed, same shape):
+Here's a simplified version with made-up names. The real one has a few more
+knobs, but this is the idea:
 
 ```go
-// ArchiveWidget handles POST /api/widgets/archive.
-func ArchiveWidget(logger *slog.Logger, svc widget.ArchiveService) http.Handler {
-	return callerPost(logger, opts[widgetio.ArchiveRequest]{
-		tag: func(r widgetio.ArchiveRequest) logTag { return logTag{ID: r.ID} },
-	}, svc, widget.ArchiveService.Archive, widgetio.ToArchiveInput, widgetio.FromArchiveResult)
+// Before: every endpoint had its own copy of this, ~60 lines each
+func ArchiveWidget(w http.ResponseWriter, r *http.Request) {
+	var req ArchiveRequest
+	if err := json.NewDecoder(r.Body).Decode(&req); err != nil { /* 400 */ }
+	log := logger.With("id", req.ID)
+	caller, err := callerFrom(r)
+	if err != nil { /* 401 */ }
+	result, err := svc.Archive(r.Context(), toArchiveInput(req, caller))
+	if err != nil { /* map error to status, log it */ }
+	json.NewEncoder(w).Encode(fromArchiveResult(result))
 }
+
+// After: one line per endpoint, the helper does the rest
+var ArchiveWidget = callerPost(svc.Archive, toArchiveInput, fromArchiveResult)
 ```
 
 All fifteen handlers fit in one 175-line file now. The helper itself is 75
