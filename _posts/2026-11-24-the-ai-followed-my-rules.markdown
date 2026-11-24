@@ -27,8 +27,7 @@ was a *project*. You'd block off days, maybe a couple of weeks. You'd spend
 half that time working up the nerve, because touching every handler in a
 service is how you break production on a Friday. This time it was one session with Opus 5.5 and a review cycle. I'm still a little floored.
 
-But the speed isn't the most interesting part. The most interesting part is
-*why the mess existed in the first place.*
+What I keep thinking about is *why the mess existed in the first place.*
 
 ## How we got here
 
@@ -62,7 +61,7 @@ Fifteen endpoints in, that's a lot of code that says the same thing fifteen
 times. The agents never pushed back on it, because the rules told them not
 to. They were following the rules perfectly.
 
-> **The sprawl wasn't an AI problem. It was a rules problem.**
+> **The rules caused the sprawl.**
 
 ## The first attempt
 
@@ -71,9 +70,8 @@ It used a small `decodeAndAuthorize` helper and cut about 700 lines. It was
 fine. It also sat open for two months, because it only chipped at the
 surface and never felt worth the risk of merging.
 
-That's the honest version of how refactors die. Not because they're hard,
-but because the payoff of a half-measure never quite beats the fear of
-touching everything.
+That's how a lot of refactors die. The payoff of a half-measure never quite
+beats the fear of touching everything.
 
 ## The second attempt
 
@@ -81,7 +79,7 @@ This time I went for the whole thing, and I fixed the rules in the same PR.
 
 **One generic POST helper.** The decode → tag → check caller → call service →
 encode flow now lives in one place. Each endpoint is a ~5-line constructor.
-Something like this (names changed, but the shape is the real thing):
+Something like this (names changed, same shape):
 
 ```go
 // ArchiveWidget handles POST /api/widgets/archive.
@@ -131,13 +129,12 @@ A few things kept this from being a "trust me, the AI did it" PR:
   per-endpoint handler tests ran unchanged against the new helper and passed.
   That's what made a change this size feel safe.
 - **The review loop worked.** Our review bot pointed out that a missing
-  dependency would only crash on the first request that needed it, not at
-  startup. The follow-up commit made service setup fail at startup with an
+  dependency would only crash on the first request that needed it. The follow-up commit made service setup fail at startup with an
   error that names exactly what's missing. That's a better design than what we
   had before the refactor.
 - **Not everything ran locally.** One set of integration tests needs
-  credentials I don't have on my laptop, so CI was their first real run. I said
-  that in the PR instead of pretending otherwise.
+  credentials I don't have on my laptop, so CI was their first real run. I called
+  that out in the PR.
 
 ## What I'm taking away
 
@@ -150,8 +147,7 @@ lands in minutes still needs a human to actually read it.
 
 > **Your agent instructions are code, and they rot like code.**
 
-The agents will keep following them long after they stop making sense. That's
-their job. Changing the rules is still yours.
+The agents will keep following them long after they stop making sense, so
+someone has to go back and change them when the situation changes.
 
-The AI deleted 3,600 lines in one session. Someone had to notice it was told
-to write them.
+Once I did, Opus 5.5 deleted 3,600 lines in one session.
