@@ -4,6 +4,10 @@ Posts live in `_posts/` and are published at https://signalandsawdust.com.
 
 ## Voice
 
+Before drafting or editing a post, read two or three recent posts in `_posts/`
+and match their voice, alongside the rules below. Where the two disagree,
+these rules win.
+
 - A sharp, friendly engineer talking to a teammate. Direct, a little
   irreverent, opinionated. Blog post, not whitepaper.
 - First person, talk to the reader. Lead with the point, then explain.
