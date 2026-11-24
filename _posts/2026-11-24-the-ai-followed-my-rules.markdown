@@ -8,6 +8,11 @@ rules problem: the agents wrote exactly the code I told them to write."
 draft: false
 ---
 
+![A smiling robot woodworker planing an endless supply of identical dovetail
+blocks, stacked to the ceiling, next to a clipboard of rules reading "One file
+per endpoint, Append-only, Don't refactor" and a stamp marked "Followed
+exactly"]({{ site.url }}/assets/ai-followed-my-rules.jpg)
+
 I just merged a PR that touched 69 files: **+1,122 / −3,623**. That's net
 2,500 lines gone, 41 files deleted outright, and the API behaves exactly the
 same as before.
