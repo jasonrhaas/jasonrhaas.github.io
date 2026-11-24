@@ -15,6 +15,13 @@ same as before.
 From first commit to merged took about a day, and most of that was review and
 CI.
 
+| | Before | After |
+|---|---|---|
+| Handler files | 15 | 1 |
+| Lines per endpoint | ~60 | ~5 |
+| Places to wire a new service | 4 | 1 |
+| Handler test coverage | 95.8% | 96.5% |
+
 I've been writing software long enough to remember when a refactor like this
 was a *project*. You'd block off days, maybe a couple of weeks. You'd spend
 half that time working up the nerve, because touching every handler in a
@@ -32,9 +39,7 @@ that work was AI-assisted.
 To keep parallel work from colliding, we gave the agents strict rules. Our
 instruction files literally said:
 
-- One file per endpoint.
-- Append-only.
-- Don't refactor shared files.
+> One file per endpoint. Append-only. Don't refactor shared files.
 
 That made sense during the port. If five people (and their agents) are all
 editing the same shared helper at once, you spend all day resolving merge
@@ -55,8 +60,9 @@ dependency setup, the server, the routes, and the integration test harness.
 
 Fifteen endpoints in, that's a lot of code that says the same thing fifteen
 times. The agents never pushed back on it, because the rules told them not
-to. They were following the rules perfectly. **The sprawl wasn't an AI
-problem. It was a rules problem.**
+to. They were following the rules perfectly.
+
+> **The sprawl wasn't an AI problem. It was a rules problem.**
 
 ## The first attempt
 
@@ -107,7 +113,12 @@ code.
 **Rewrite the rules.** I deleted the port-era subagents and prompts. I removed
 "one file per endpoint, append-only," and added a "Keep it DRY" section to
 every instruction file the agents read. The new rule is basically the
-opposite of the old one: *consolidate, don't sprawl.*
+opposite of the old one:
+
+```diff
+- One file per endpoint. Append-only. Don't refactor shared files.
++ Keep it DRY. Consolidate, don't sprawl.
+```
 
 That last step is the one that matters most. If I'd only fixed the code, the
 next fifteen endpoints would have grown right back into fifteen files.
@@ -130,27 +141,17 @@ A few things kept this from being a "trust me, the AI did it" PR:
 
 ## What I'm taking away
 
-The speed is real, and I don't want to undersell it. A refactor I would have
-budgeted a week or two for, and then avoided for months, went from first
-commit to merged in about a day.
+The speed is real. A refactor I'd have budgeted two weeks for, then dodged
+for months, merged in a day.
 
-Speed comes at a price, though. That same speed is what built the mess.
-The agents could stamp out a new 60-line handler file in seconds, so nobody
-felt the pain of copy number fifteen. When writing code is nearly free,
-duplication is nearly free too, right up until someone has to change all of
-it.
+But speed has a price. It's what built the mess in the first place: when code
+is free to write, copy number fifteen is free too. And a 69-file diff that
+lands in minutes still needs a human to actually read it.
 
-And the bill comes due in review. A 69-file diff lands in minutes, but
-reading it still takes human time. If I'm not willing to actually understand
-what I'm merging, the speed is just a faster way to ship something I can't
-explain. The tests running first and the review bot catching a real issue
-weren't nice extras. They were what made the speed safe to use.
+> **Your agent instructions are code, and they rot like code.**
 
-But the bigger lesson is that **your agent instructions are code, and they
-rot like code.** Ours were written for a temporary situation, a parallel port,
-and they outlived it. The agents kept following them long after they stopped
-making sense, and that's exactly what you want an agent to do. It just means
-someone has to go back and change the rules when the situation changes.
+The agents will keep following them long after they stop making sense. That's
+their job. Changing the rules is still yours.
 
-That someone is still the human. The AI can delete 3,600 lines in one session.
-It's on me to notice that it was told to write them in the first place.
+The AI deleted 3,600 lines in one session. Someone had to notice it was told
+to write them.
