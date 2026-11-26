@@ -1,5 +1,5 @@
 
-const C = 'shop-f16dd7e89ad1';
+const C = 'shop-72b9e4c115ec';
 const FILES = ['./', './index.html', './manifest.webmanifest', './shop-icon-180.png', './shop-icon-192.png', './shop-icon-512.png'];
 self.addEventListener('install', e => { e.waitUntil(caches.open(C).then(c => c.addAll(FILES))); self.skipWaiting(); });
 self.addEventListener('activate', e => {
